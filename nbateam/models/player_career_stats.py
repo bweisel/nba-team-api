@@ -10,7 +10,7 @@ class PlayerCareerStats(db.Model):
     gs = db.Column(db.Integer, nullable=False)
     min = db.Column(db.Integer, nullable=False)
     fgm = db.Column(db.Integer, nullable=False)
-    fga = db.Column(db.Integer)
+    fga = db.Column(db.Integer, nullable=False)
     fg_pct = db.Column(db.Float, nullable=False)
     fg3m = db.Column(db.Integer, nullable=False)
     fg3a = db.Column(db.Integer, nullable=False)
