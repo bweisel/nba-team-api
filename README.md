@@ -7,6 +7,10 @@ Create a virtualenv
     source venv/bin/activate
     pip install -r requirements.txt
 
+Create a postgres database
+
+    TODO: write instructions
+
 Set some required environment variables:
 
     export FLASK_APP=/path/to/manage.py
@@ -14,16 +18,21 @@ Set some required environment variables:
     export FLASK_DEBUG=1
     export DATABASE_URL=sqlite:////path/to/code/root/nba-team-api/nbateam.db
 
-Then setup the database (sqlite for local dev):
+Setup the database:
 
-    flask db init
+    flask db init (only run once)
     flask db migrate
     flask db upgrade
+    TODO: create db dump and put instructions on how to load
+
+Run the API server locally:
+
     flask run
 
-Then run the following commands to bootstrap your environment:
+And test it out:
 
-    git clone https://github.com/bweisel/what-to-do
-    cd what-to-do
-    pip install -r requirements.txt
-    flask run
+    curl localhost:5000/api/players/1824
+
+If you want to update the stats:
+
+    TODO: write instructions
