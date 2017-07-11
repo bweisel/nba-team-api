@@ -40,14 +40,27 @@ Import the database dump file
 
     pg_restore --verbose --clean --no-acl --no-owner -h localhost -U nbateam -d nbateam nbateam.dump
 
-Run the API server locally:
+Run the API server locally
 
     flask run
 
-And test it out:
+And test it out
 
     curl localhost:5000/api/players/1824
 
-If you want to update the stats:
+
+## Maintenance
+If you want to update the stats
 
     TODO: write instructions
+
+To capture a backup from heroku and apply to local
+
+    heroku pg:backups:capture --app nba-team-api
+    heroku pg:backups:download --app nba-team-api
+
+To apply a local backup to heroku
+
+    pg_dump -Fc --no-acl --no-owner -h localhost -U nbateam nbateam > nbateam.dump
+    Upload the dump to S3
+    heroku pg:backups restore --app nba-team-api 'https://s3-us-west-2.amazonaws.com/nba-team-api/nbateam.dump' DATABASE_URL
