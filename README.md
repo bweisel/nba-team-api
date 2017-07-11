@@ -20,6 +20,7 @@ Create a new role and database for this app
     \q (to exit)
 
 Login to verify connecting to the new database (there won't be any tables yet)
+
     psql -d nbateam -U nbateam
 
 
