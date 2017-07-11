@@ -58,6 +58,7 @@ To capture a backup from heroku and apply to local
 
     heroku pg:backups:capture --app nba-team-api
     heroku pg:backups:download --app nba-team-api
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U nbateam -d nbateam latest.dump
 
 To apply a local backup to heroku
 
