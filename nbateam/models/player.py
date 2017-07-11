@@ -50,5 +50,5 @@ class Player(db.Model):
     def __init__(self):
         pass
 
-    # def __repr__(self):
-    #     return '<Player %d>' % self.id
+    def __repr__(self):
+        return '<Player %d>' % self.id
