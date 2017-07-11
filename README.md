@@ -23,7 +23,7 @@ Login to verify connecting to the new database (there won't be any tables yet)
 
     psql -d nbateam -U nbateam
 
-Exit out of psql and set some required environment variables:
+Exit out of psql and set some required environment variables
 
     export FLASK_APP=/path/to/manage.py
     export SECRET_KEY=this-is-the-local-key
@@ -35,7 +35,10 @@ Setup the database:
     flask db init (only run once)
     flask db migrate
     flask db upgrade
-    TODO: create db dump and put instructions on how to load
+
+Import the database dump file
+
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U nbateam -d nbateam nbateam.dump
 
 Run the API server locally:
 
