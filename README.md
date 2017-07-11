@@ -9,8 +9,8 @@ Create a virtualenv at the project root
 
 Install postgres locally, if needed
 
-   brew install postgres
-   pg_ctl -D /usr/local/var/postgres start
+    brew install postgres
+    pg_ctl -D /usr/local/var/postgres start
 
 Create a new role and database for this app
 
@@ -22,7 +22,6 @@ Create a new role and database for this app
 Login to verify connecting to the new database (there won't be any tables yet)
 
     psql -d nbateam -U nbateam
-
 
 Exit out of psql and set some required environment variables:
 
